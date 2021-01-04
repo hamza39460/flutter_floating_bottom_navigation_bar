@@ -11,6 +11,7 @@ class FloatingNavbar extends StatefulWidget {
   final Color selectedItemColor;
   final Color unselectedItemColor;
   final Color backgroundColor;
+  final Color bottomAppBarColor;
   final double fontSize;
   final double iconSize;
   final double itemBorderRadius;
@@ -21,25 +22,26 @@ class FloatingNavbar extends StatefulWidget {
   final double width;
   final double elevation;
 
-  FloatingNavbar({
-    Key key,
-    @required this.items,
-    @required this.currentIndex,
-    @required this.onTap,
-    ItemBuilder itemBuilder,
-    this.backgroundColor = Colors.black,
-    this.selectedBackgroundColor = Colors.white,
-    this.selectedItemColor = Colors.black,
-    this.iconSize = 24.0,
-    this.fontSize = 11.0,
-    this.borderRadius = 8,
-    this.itemBorderRadius = 8,
-    this.unselectedItemColor = Colors.white,
-    this.margin = const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-    this.padding = const EdgeInsets.only(bottom: 8, top: 8),
-    this.width = double.infinity,
-    this.elevation = 0.0,
-  })  : assert(items.length > 1),
+  FloatingNavbar(
+      {Key key,
+      @required this.items,
+      @required this.currentIndex,
+      @required this.onTap,
+      ItemBuilder itemBuilder,
+      this.backgroundColor = Colors.black,
+      this.selectedBackgroundColor = Colors.white,
+      this.selectedItemColor = Colors.black,
+      this.iconSize = 24.0,
+      this.fontSize = 11.0,
+      this.borderRadius = 8,
+      this.itemBorderRadius = 8,
+      this.unselectedItemColor = Colors.white,
+      this.margin = const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      this.padding = const EdgeInsets.only(bottom: 8, top: 8),
+      this.width = double.infinity,
+      this.elevation = 0.0,
+      this.bottomAppBarColor = Colors.transparent})
+      : assert(items.length > 1),
         assert(items.length <= 5),
         assert(currentIndex <= items.length),
         assert(width > 50),
@@ -69,7 +71,7 @@ class _FloatingNavbarState extends State<FloatingNavbar> {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: Colors.transparent,
+      color: widget.bottomAppBarColor,
       elevation: widget.elevation,
       child: Column(
         mainAxisSize: MainAxisSize.min,
