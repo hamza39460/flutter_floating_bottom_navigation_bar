@@ -158,10 +158,10 @@ ItemBuilder _defaultItemBuilder({
                                 right: 1,
                                 top: 1,
                                 child: Container(
-                                  width: 40,
-                                  height: 40,
+                                  width: 20,
+                                  height: 20,
                                   child: Text(item.notification,
-                                      style: TextStyle(fontSize: 30)),
+                                      style: TextStyle(fontSize: 12)),
                                   decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       color: Color(0xfffc8019)),
