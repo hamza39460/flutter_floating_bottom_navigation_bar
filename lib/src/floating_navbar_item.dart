@@ -10,6 +10,6 @@ class FloatingNavbarItem {
     @required this.icon,
     @required this.title,
     this.customWidget = const SizedBox(),
-    this.notification = -1,
+    this.notification = "-1",
   });
 }
