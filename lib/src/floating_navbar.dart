@@ -162,12 +162,11 @@ ItemBuilder _defaultItemBuilder({
                                   height: 16
                                   child: Center(
                                     child:Text(item.notification,
-                                      style: TextStyle(fontSize: 12,color: Colors.white)),
+                                      style: TextStyle(fontSize: 12,color:Colors.white)),
+                                  ),
                                   decoration: BoxDecoration(
                                       shape: BoxShape.circle,
-                                      color: Color(0xfffc8019)
-                                  ),
-                                  ),
+                                      color: Color(0xfffc8019)),
                                 ))
                             : Container()
                       ]),
