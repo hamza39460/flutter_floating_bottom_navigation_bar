@@ -145,13 +145,28 @@ ItemBuilder _defaultItemBuilder({
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Icon(
-                        item.icon,
-                        color: currentIndex == items.indexOf(item)
-                            ? selectedItemColor
-                            : unselectedItemColor,
-                        size: iconSize,
-                      ),
+                      Stack(children: <Widget>[
+                        Icon(
+                          item.icon,
+                          color: currentIndex == items.indexOf(item)
+                              ? selectedItemColor
+                              : unselectedItemColor,
+                          size: iconSize,
+                        ),
+                        item.notification != "-1"
+                            ? Positioned(
+                                right: 1,
+                                top: 1,
+                                child: Container(
+                                  width: 60,
+                                  height: 60,
+                                  child: Text(item.notification),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Color(0xfffc8019)),
+                                ))
+                            : Container()
+                      ]),
                       Text(
                         '${item.title}',
                         style: TextStyle(
